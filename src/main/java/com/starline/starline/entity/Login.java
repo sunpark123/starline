@@ -13,7 +13,7 @@ public class Login {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer id;
     public String mail;
-    private String password;
+    public String password;
 
 
 }
