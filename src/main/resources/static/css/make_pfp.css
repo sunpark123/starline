@@ -1,0 +1,96 @@
+@font-face {
+    font-family: 'SUIT-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-style: normal;
+}
+*{
+    font-family: 'SUIT-Regular';
+    margin : 0;
+    padding: 0;
+    color: white;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(21,21,21);
+}
+.middle{
+    width: 40vw;
+    height: 100vh;
+    margin: 0 auto;
+}
+.box{
+    display: none;
+    width: 40vw;
+    padding-top: 40vh;
+    text-align: center;
+    float: left;
+}
+#box1{
+    display: block;
+}
+.box > h1{
+    height: 40px;
+    width: 40vw ;
+    overflow: hidden;
+    margin: 0 auto;
+    animation-duration: 8s;
+    animation-name: typing;
+}
+.box > input{
+    border: none;
+    width: 20vw;
+    height: 5vh;
+    border-radius: 2px;
+    margin: 0 auto;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.036);
+    outline: 2px gray solid;
+    font-size: xx-large;
+    padding-left: 3px;
+}
+.next{
+    animation-duration: 12s;
+    animation-name: show;
+    margin-top: 10vh;
+    cursor: pointer;
+}
+.next > h1{
+
+    outline: 1px white solid;
+    width: 20vw;
+    border-radius: 10px;
+    margin: 0 auto;
+    color:lightgray;
+}
+.next > button{
+    height : 10vh;
+    outline: 1px white solid;
+    width: 20vw;
+    background-color:transparent;
+    border-radius: 10px;
+    margin: 0 auto;
+    color:lightgray;
+}
+.next > button:hover{
+    outline: 1px gray solid;
+
+    color:gray;
+}
+.next > h1:hover{
+    outline: 1px gray solid;
+
+    color:gray;
+}
+
+@keyframes typing {
+from {
+    width: 0;
+}
+
+to {
+    width: 100%;
+}
+}
+
+

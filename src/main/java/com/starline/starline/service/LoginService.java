@@ -1,19 +1,19 @@
 package com.starline.starline.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import com.starline.starline.repository.LoginRespository;
 import com.starline.starline.entity.Login;
-import java.util.List;
-import java.util.Objects;
+;
 
 @Service
 public class LoginService {
     @Autowired
     private LoginRespository loginRepository;
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+    private BCryptPasswordEncoder bc = new BCryptPasswordEncoder();
+    public String user_mail = "";
     public boolean registers(Login info) //회원가입
     {
 
@@ -25,9 +25,9 @@ public class LoginService {
         }
         if(!already_account)
         {
-            //String encodePassword = passwordEncoder.encode(info.getPassword());
-            //info.setPassword(encodePassword);
+            info.setPassword(bc.encode(info.getPassword()));
             loginRepository.save(info);
+            user_mail = info.getMail();
         }
         return already_account;
     }
@@ -37,7 +37,8 @@ public class LoginService {
         var logins = false;
         for (Login e : loginRepository.findAll()) {
             if (e.getMail().equals(info.getMail())) {
-                if (e.getPassword().equals(info.getPassword())) {
+                user_mail=info.getMail();
+                if (bc.matches(info.getPassword(), e.getPassword())) {
                     logins = true;
                 }
             }
@@ -45,4 +46,5 @@ public class LoginService {
 
         return logins;
     }
+
 }

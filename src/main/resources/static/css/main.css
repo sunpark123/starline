@@ -1,0 +1,200 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: 'SUIT-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-style: normal;
+}
+body{
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(21, 21, 21);
+}
+
+.main{
+    float: left;
+    margin-top: 12vw;
+    width:100vw;
+    height: 30vh;
+}
+.msg{
+    width:50vw;
+    height: 35vh;
+    margin-left: 10vw;
+
+    float: left;
+}
+.msg > h1{
+    margin-top: 2vh;
+    font-family: 'SUIT-Regular';
+    color: white;
+    font-weight: bold;
+    font-size: 70px;
+}
+.msg > p{
+    color: white;
+    font-family: 'SUIT-Regular';
+    font-size: 30px;
+}
+.img{
+    position: absolute;
+    top: 40%;
+    left: 80%;
+    transform: translate(-80%, -40%);
+    float: right;
+} img{
+    width: 25vw;
+}
+.msg >button{
+    margin-top: 12vh;
+    margin-left:3%;
+
+    width: 70%;
+    height: 7vh;
+    background-color: rgba(255, 255, 255, 0.036);
+    color: white;
+    border-radius: 5px;
+    outline: 2px gray solid;
+    border: none;
+    font-family:  'SUIT-Regular';
+    font-size: xx-large;
+}
+.msg>button:hover{
+    outline: 2px white solid;
+}
+
+.login_form{
+    width:37vw;
+    height: 35vh;
+    display: none;
+    float: left;
+    float: left;
+    position: absolute;
+    margin-left: 15vw;
+    margin-top: 30vh;
+}
+.register_form{
+  width:37vw;
+  height: 35vh;
+  display: none;
+  float: left;
+  float: left;
+  position: absolute;
+  margin-left: 15vw;
+  margin-top: 30vh;
+}
+form > button{
+    margin-top: 3vh;
+    margin-left: 12%;
+
+    width: 50%;
+    height: 7vh;
+    background-color: rgba(255, 255, 255, 0.036);
+    color: white;
+    border-radius: 5px;
+    outline: 2px gray solid;
+    border: none;
+    font-family:  'SUIT-Regular';
+    font-size: xx-large;
+}
+form > button:hover{outline: 2px white solid;}
+input{
+    margin-top: 20px;
+    margin-left: 3%;
+    width: 70%;
+    height: 5vh;
+    background-color: rgba(255, 255, 255, 0.036);
+    color: white;
+    border-radius: 5px;
+    outline: 2px gray solid;
+    border: none;
+    font-family:  'SUIT-Regular';
+    font-size: xx-large;
+    padding-left: 5px;
+}
+
+input:hover{
+    outline: 2px white solid;
+}
+.back{
+  margin-left: 3%;
+  width: 70%;
+  height: 30px;
+}
+.login_form > .back > #gobackid{
+  float: left;
+  width: 140px;
+  color: lightgray;
+  font-size: x-large;
+  cursor: pointer;
+}
+.register_form > .back > #gobackid{
+  width: 140px;
+  color: lightgray;
+  font-size: x-large;
+  cursor: pointer;
+}
+
+.login_form > .back > #goregisterid{
+  float: right;
+  color: lightgray;
+  font-size: x-large;
+  cursor: pointer;
+}
+
+
+
+
+
+
+.msg > p {
+    animation-duration: 2s;
+    animation-name: slidein;
+  }
+.msg > h1 {
+animation-duration: 1s;
+animation-name: slidein;
+}
+.img{
+    animation-duration: 2s;
+    animation-name: downtoup;
+}
+
+.msg > button{
+    animation-duration: 4s;
+    animation-name: zeroto100;
+}
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+
+  @keyframes downtoup {
+    from {
+      margin-top: 100%;
+    }
+
+    to {
+      margin-top: 0%;
+    }
+  }
+
+  @keyframes zeroto100 {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }

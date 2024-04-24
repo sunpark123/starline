@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/make_pfp.css">
+    <title>makeuser</title>
+</head>
+<body>
+<div class="middle">
+    <div class="box" id="box1">
+        <h1>Hello, Nice meet you</h1>
+        <div class="next"><h1 onclick="next()">></h1></div>
+    </div>
+    <div class="box" id="box2">
+        <h1>We Made Your Profile</h1>
+        <div class="next"><h1 onclick="next()">></h1></div>
+    </div>
+    <div class="box" id="box3">
+        <h1>Are U Ready?</h1>
+        <div class="next"><h1 onclick="next()">></h1></div>
+    </div>
+    <div class="box" id="box4">
+        <h1>Ok, Let's Go!!</h1>
+        <div class="next"><h1 onclick="next()">></h1></div>
+    </div>
+    <div class="box" id="box5">
+        <h1>Name</h1>
+        <input type="text" id="input_name">
+        <div class="next"><h1 onclick="next()">></h1></div>
+    </div>
+    <div class="box" id="box6">
+        <h1>User Id</h1>
+        <input type="text" id="input_id">
+        <div class="next"><h1 onclick="next()">></h1></div>
+    </div>
+    <div class="box" id="box7">
+        <h1>Who You?</h1>
+        <input type="text" id="input_content">
+        <div class="next"><h1 onclick="next()">></h1></div>
+    </div>
+    <div class="box" id="box8">
+        <h1>ProFlie Image</h1>
+        <form action="/pfp_upload" method="post" enctype="multipart/form-data">
+            <input name="file" type="file" id="file">
+            <div class="next"><button type="submit" onclick="next()">></button></div>
+        </form>
+
+    </div>
+</div>
+</body>
+
+<script src="/js/make_pfp.js"></script>
+</html>

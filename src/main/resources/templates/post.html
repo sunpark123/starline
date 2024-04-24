@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/post.css?after">
+    <script src="js/post.js"></script>
+    <title>Document</title>
+</head>
+
+<script th:inline="javascript">
+    let userid = [[${UserId}]]
+    let userpfploc = [[${UserPfpLoc}]]
+</script>
+
+<body>
+<div class="header">
+    <div class="logo"></div>
+    <div class="make"></div>
+</div>
+
+<div class="main">
+    <div class="back"><</div>
+    <div class="box">
+        <div class="post_pfp">
+            <div class="pfp_box">
+                <div class="pfp_img"><img th:src="|starline_file/pfp/${post.filelocation}|" alt=""></div>
+                <div class="pfp_name" th:text="${post.poster}">zizonsuck</div>
+            </div>
+
+        </div>
+            <div class="post">
+            <div class="post_img">
+                <img th:src="|starline_file/pfp/${post.filelocation}|" alt="">
+            </div>
+            <div class="post_info">
+                <div class="title">
+                    <p th:text="${post.title}">오늘은 춤을 췄다</p>
+                </div>
+
+                <div class="comment_box">
+
+                    <div class="comment" th:if="${not #strings.isEmpty(post.content)}" id="copy_c">
+                        <div class="cpfp_img">
+                            <img th:src="|starline_file/pfp/${post.filelocation}|" alt="">
+                        </div>
+                        <div class="cpfp_name">
+                            <p th:text="${post.poster}">tjrgus.__1</p>
+                            <div class="cpfp_content">
+                                <p th:text="${post.content}">ㅋㅋㅋㅋㅋㅋㅋㅋㅋ 너무 웃겨요</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="make_comment" th:each="row : ${comments}">
+                        <div class="comment">
+                            <div class="cpfp_img">
+                                <img th:src="|starline_file/pfp/${row.user_pfploc} |" alt="">
+                            </div>
+                            <div class="cpfp_name">
+                                <p th:text="${row.name}">tjrgus.__1</p>
+                                <div class="cpfp_content">
+                                    <p th:text="${row.content}">ㅋㅋㅋㅋㅋㅋㅋㅋㅋ 너무 웃겨요</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="add_comment">
+                    <input name="parent_id" type="text" style="display:none" th:value="${post.id}" id="parent_id">
+                    <input name="content" type="text" id="content">
+                    <button onclick="addcomment()">전송</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="next">></div>
+</div>
+
+</body>
+</html>
